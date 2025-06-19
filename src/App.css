@@ -1,0 +1,426 @@
+html, body, #root {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: "Segoe UI", sans-serif;
+  background: #fff;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.login-container {
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  background: linear-gradient(120deg, #035ff6 0%, #3ec6ff 100%);
+  background-size: 200% 200%;
+  animation: gradientMove 6s ease-in-out infinite;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+  overflow-y: auto;
+  padding-bottom: 20px;
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    height: 100vh;
+    border-radius: 0; /* <- remove awkward rounded corners */
+  }
+
+}
+/* LOGIN PAGE HEADER HEIGHT & LOGO SIZE */
+.login-header {
+  background: linear-gradient(135deg, #035ff6 60%, #0a3d91 100%);
+  text-align: center;
+  padding: 60px 14px 30px 14px; /* More padding for space */
+  min-height: 240px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  /* ✅ Ensure center alignment */
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.logo {
+  width: 180px;   /* ✅ Make logo much bigger */
+  max-width: 80%;
+  height: auto;
+  margin-bottom: 10px;
+  display: block;
+}
+
+
+
+.slogan {
+  font-weight: bold;
+  font-size: 13px;
+  margin: 0;
+  margin-top: 4px;
+  letter-spacing: 0.2px;
+}
+
+.slogan .yellow { color: #ffe600; }
+.slogan .blue { color: #3ec6ff; margin-left: 2px; }
+.slogan .red { color: #ff4b5c; margin-left: 2px; }
+
+.login-form {
+  margin-top: -15px; /* Pull form up under the curve more gently */
+  padding: 20px 20px 24px; /* Increase bottom padding for space */
+  border-top-left-radius: 32px;
+  border-top-right-radius: 32px;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  text-align: center;
+}
+
+
+
+
+.login-form h2 {
+  color: #0a3d91;
+  font-size: 1.6rem; /* Increased from 1.3rem */
+  font-weight: 700;
+  margin: 0 0 4px 0;
+  text-align: left; /* Shift to left */
+}
+
+.form-subtext {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 16px;
+  text-align: left; /* Align with inputs */
+}
+.input-label {
+  display: block;
+  text-align: left;
+  font-size: 0.92rem;
+  color: #0a3d91;
+  font-weight: 600;
+  margin-bottom: 4px;
+  margin-top: 10px;
+}
+.login-form input[type="text"],
+.login-form input[type="tel"],
+.login-form input[type="password"] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  border: 1.5px solid #035ff6; /* 🔵 Always blue border */
+  border-radius: 7px;
+  font-size: 1rem;
+  background: #f8faff;
+  outline: none;
+  transition: box-shadow 0.2s;
+}
+
+/* ✨ Optional glow effect when focused */
+.login-form input:focus {
+  box-shadow: 0 0 5px 2px rgba(3, 95, 246, 0.3);
+}
+
+.login-btn {
+  width: 100%;
+  background: linear-gradient(90deg, #035ff6 60%, #033dc1 100%);
+  color: #fff;
+  padding: 11px 0;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+  letter-spacing: 0.5px;
+}
+
+.login-btn:hover {
+  background: linear-gradient(90deg, #033dc1 60%, #035ff6 100%);
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  font-size: 0.90rem;
+  color: #555;
+  margin: 8px 0 4px 0;
+  gap: 5px;
+  justify-content: flex-start;
+}
+
+.checkbox input[type="checkbox"] {
+  accent-color: #035ff6;
+  width: 15px;
+  height: 15px;
+  margin-right: 4px;
+}
+
+.checkbox a {
+  color: #035ff6;
+  text-decoration: underline;
+}
+
+.signup {
+  font-size: 0.95rem;
+  margin-top: 8px;
+  color: #222;
+}
+
+.signup a {
+  color: #035ff6;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    padding: 0;
+  }
+  .login-card {
+    border: none;
+    box-shadow: none;
+    padding: 0;
+  }
+  .login-header {
+    padding-top: 28px;
+    padding-bottom: 12px;
+  }
+  .login-form {
+    margin-top: -8px;
+    padding: 16px 14px 10px 14px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+  .logo {
+    width: 110px;
+  }
+  .login-form input[type="text"],
+  .login-form input[type="tel"],
+  .login-form input[type="password"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 12px;
+  }
+}
+
+.header-bubbles {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.header-bubble {
+  position: absolute;
+  background: rgba(255,255,255,0.18);
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: headerBubbleFloat 10s linear infinite;
+}
+
+.header-bubble1 { width: 18px; height: 18px; left: 15%; top: 30%; animation-delay: 0s;}
+.header-bubble2 { width: 10px; height: 10px; left: 70%; top: 20%; animation-delay: 2s;}
+.header-bubble3 { width: 8px; height: 8px; left: 80%; top: 60%; animation-delay: 4s;}
+.header-bubble4 { width: 14px; height: 14px; left: 30%; top: 60%; animation-delay: 1s;}
+.header-bubble5 { width: 7px; height: 7px; left: 60%; top: 40%; animation-delay: 3s;}
+
+@keyframes headerBubbleFloat {
+  0% { transform: translateY(0) scale(1);}
+  50% { transform: translateY(-10px) scale(1.1);}
+  100% { transform: translateY(0) scale(1);}
+}
+
+.app-root {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary {
+  width: 100%;
+  border-radius: 8px;
+}
+
+
+/* Login header with curved bottom */
+.login-page .login-header {
+  background: linear-gradient(180deg, #007bff, #0052cc);
+  padding-top: 100px;
+  padding-bottom: 60px;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  text-align: center;
+  position: relative;
+}
+
+/* Curve transition to white */
+.login-page .login-header::after {
+  content: "";
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  z-index: 1;
+}
+
+/* Logo styling */
+.login-page .logo {
+  width: 180px;
+  height: auto;
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+}
+
+/* Slogan */
+.login-page .slogan {
+  margin-top: 10px;
+  font-size: 16px;
+  position: relative;
+  z-index: 2;
+}
+
+/* FORM: reduce top space slightly, increase bottom space */
+.login-page .login-form {
+  margin-top: 40px; /* Slightly closer to header */
+  padding: 0 20px 24px; /* Padding-bottom = space at bottom */
+}
+
+/* LOGIN CARD */
+.login-page .login-card {
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+
+
+
+/* Signup full page layout */
+.signup-page .login-container {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.signup-page .login-card {
+  width: 100%;
+  max-width: 420px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Reduced header size */
+          /*.signup-page .login-header {
+            padding-top: 60px;   
+           padding-bottom: 40px;  
+           } */
+            
+.signup-page .login-header {
+  background: linear-gradient(180deg, #007bff, #0052cc);
+  padding-top: 30px;   /* ↓ reduced further */
+  padding-bottom: 16px;  /* ↓ reduced further */
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  text-align: center;
+  position: relative;
+}
+
+
+
+/* Curve under header */
+.signup-page .login-header::after {
+  content: "";
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  z-index: 1;
+}
+
+
+/* Logo styling */
+.signup-page .logo {
+  width: 140px;
+  height: auto;
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+}
+
+/* Slogan styling */
+.signup-page .slogan {
+  margin-top: 8px;
+  font-size: 15px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Form fits more space */
+.signup-page .login-form {
+  margin-top: -20px; /* Slightly pull up — not too much */
+  padding: 28px 20px 24px; /* Top padding allows Welcome! to show */
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+  text-align: center;
+}
+.signup-page .signup {
+  margin-bottom: 12px;
+}
+
+.signup-page .login-form h2 {
+  color: #0a3d91;
+  font-size: 1.5rem;
+  margin: 8px 0 4px 0;
+  font-weight: 700;
+}
+
+.signup-page .form-subtext {
+  color: #555;
+  font-size: 0.95rem;
+  margin: 0 0 14px 0;
+}
